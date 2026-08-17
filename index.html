@@ -13,9 +13,9 @@
             font-family: system-ui, -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
-        /* Dropdown hover for desktop */
+        /* Desktop dropdown hover fix using the wrapper container */
         @media (min-width: 768px) {
-            .group:hover .dropdown-menu {
+            .dropdown-wrapper:hover .dropdown-menu {
                 display: block;
             }
         }
@@ -44,17 +44,19 @@
                 <nav id="nav-container" class="hidden md:flex items-center space-x-6 text-sm font-semibold uppercase tracking-wide text-stone-300 absolute md:relative top-full left-0 w-full md:w-auto bg-stone-900 md:bg-transparent border-b md:border-none border-stone-800 shadow-lg md:shadow-none p-4 md:p-0 flex-col md:flex-row space-y-3 md:space-y-0">
                     <a href="index.html" class="hover:text-amber-400 transition w-full md:w-auto py-1 md:py-0">Home</a>
                     
-                    <!-- Recruiting Rules with Dropdown -->
-                    <div class="relative group py-2 md:py-0 w-full md:w-auto" id="dropdown-parent">
+                    <!-- Recruiting Rules with Dropdown Wrapper -->
+                    <div class="dropdown-wrapper relative py-2 md:py-0 w-full md:w-auto" id="dropdown-parent">
                         <button id="dropdown-toggle" class="hover:text-amber-400 transition flex items-center justify-between md:justify-start gap-1 w-full md:w-auto text-left">
                             <span>Recruiting Rules</span>
                             <svg class="w-4 h-4 transition-transform duration-200" id="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
-                        <!-- Sub-menu -->
-                        <div id="dropdown-menu" class="dropdown-menu hidden md:group-hover:block md:absolute left-0 mt-2 w-full md:w-48 bg-stone-950 md:bg-stone-900 border border-stone-800 rounded-lg shadow-xl py-2 z-50 pl-4 md:pl-0">
-                            <a href="recruiting.html#regular-season" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Regular Season</a>
-                            <a href="recruiting.html#transfer-portal" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Transfer Portal</a>
-                            <a href="states.html" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Neighboring States</a>
+                        <!-- Sub-menu: Added 'pt-2' on desktop to create an invisible hover bridge so mouse tracking doesn't break -->
+                        <div id="dropdown-menu" class="dropdown-menu hidden md:absolute left-0 pt-2 w-full md:w-48 z-50">
+                            <div class="bg-stone-950 md:bg-stone-900 border border-stone-800 rounded-lg shadow-xl py-2 pl-4 md:pl-0 space-y-1 md:space-y-0">
+                                <a href="recruiting.html#regular-season" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Regular Season</a>
+                                <a href="recruiting.html#transfer-portal" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Transfer Portal</a>
+                                <a href="states.html" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Neighboring States</a>
+                            </div>
                         </div>
                     </div>
                 </nav>
