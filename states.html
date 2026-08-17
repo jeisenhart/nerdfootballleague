@@ -64,17 +64,323 @@
                 </p>
             </div>
             
-            <!-- States Content Section -->
-            <div class="bg-stone-900 border border-stone-800 rounded-xl p-6 md:p-8 space-y-4 shadow-lg">
-                <h2 class="text-xl md:text-2xl font-bold text-amber-500 uppercase tracking-wide">Pipeline & Territory Management</h2>
-                <p class="text-sm md:text-base leading-relaxed text-stone-300">
-                    When targeting prospects outside of your program's immediate home state, coaches must consider regional proximity bonuses and pipeline availability:
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-sm md:text-base text-stone-400">
-                    <li>Primary pipelines automatically grant baseline scouting and weekly interest multipliers.</li>
-                    <li>Neighboring states share secondary pipeline bleed effects depending on your program tier and coach specialization levels.</li>
-                    <li>Coordinate with conference rivals to avoid redundant resource allocation in overlapping border zones.</li>
-                </ul>
+            <!-- States Table Section -->
+            <div class="bg-stone-900 border border-stone-800 rounded-xl p-6 md:p-8 space-y-6 shadow-lg">
+                <h2 class="text-xl md:text-2xl font-bold text-amber-500 uppercase tracking-wide">State Recruiting Breakdown</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-stone-800 text-stone-400 text-xs uppercase tracking-wider">
+                                <th class="p-3">State</th>
+                                <th class="p-3 text-center">5 Stars</th>
+                                <th class="p-3 text-center">4 Stars</th>
+                                <th class="p-3">Border States</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-stone-800 text-sm">
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Alabama</td>
+                                <td class="p-3 text-center">2</td>
+                                <td class="p-3 text-center">14</td>
+                                <td class="p-3 text-stone-400">1</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Alaska</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Arizona</td>
+                                <td class="p-3 text-center">1</td>
+                                <td class="p-3 text-center">13</td>
+                                <td class="p-3 text-stone-400">1</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Arkansas</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">2</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">California</td>
+                                <td class="p-3 text-center">4</td>
+                                <td class="p-3 text-center">39</td>
+                                <td class="p-3 text-stone-400">State Only</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Colorado</td>
+                                <td class="p-3 text-center">1</td>
+                                <td class="p-3 text-center">5</td>
+                                <td class="p-3 text-stone-400">3</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Connecticut</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">5</td>
+                                <td class="p-3 text-stone-400">3</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Delaware</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Florida</td>
+                                <td class="p-3 text-center">5</td>
+                                <td class="p-3 text-center">48</td>
+                                <td class="p-3 text-stone-400">State Only</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Georgia</td>
+                                <td class="p-3 text-center">4</td>
+                                <td class="p-3 text-center">40</td>
+                                <td class="p-3 text-stone-400">State Only</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Hawaii</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">4</td>
+                                <td class="p-3 text-stone-400">3</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Idaho</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Illinois</td>
+                                <td class="p-3 text-center">2</td>
+                                <td class="p-3 text-center">10</td>
+                                <td class="p-3 text-stone-400">1</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Indiana</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">8</td>
+                                <td class="p-3 text-stone-400">2</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Iowa</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">1</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Kansas</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">3</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Kentucky</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">3</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Louisiana</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">10</td>
+                                <td class="p-3 text-stone-400">1</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Maine</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Maryland</td>
+                                <td class="p-3 text-center">1</td>
+                                <td class="p-3 text-center">9</td>
+                                <td class="p-3 text-stone-400">2</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Massachusetts</td>
+                                <td class="p-3 text-center">1</td>
+                                <td class="p-3 text-center">3</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Michigan</td>
+                                <td class="p-3 text-center">1</td>
+                                <td class="p-3 text-center">14</td>
+                                <td class="p-3 text-stone-400">1</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Minnesota</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">3</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Mississippi</td>
+                                <td class="p-3 text-center">2</td>
+                                <td class="p-3 text-center">9</td>
+                                <td class="p-3 text-stone-400">2</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Missouri</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">3</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Montana</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Nebraska</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">1</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Nevada</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">5</td>
+                                <td class="p-3 text-stone-400">3</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">New Hampshire</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">New Jersey</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">8</td>
+                                <td class="p-3 text-stone-400">2</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">New Mexico</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">New York</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">5</td>
+                                <td class="p-3 text-stone-400">3</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">North Carolina</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">10</td>
+                                <td class="p-3 text-stone-400">1</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">North Dakota</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Ohio</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">14</td>
+                                <td class="p-3 text-stone-400">1</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Oklahoma</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">5</td>
+                                <td class="p-3 text-stone-400">3</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Oregon</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">1</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Pennsylvania</td>
+                                <td class="p-3 text-center">1</td>
+                                <td class="p-3 text-center">12</td>
+                                <td class="p-3 text-stone-400">1</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Rhode Island</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">South Carolina</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">8</td>
+                                <td class="p-3 text-stone-400">2</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">South Dakota</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Tennessee</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">8</td>
+                                <td class="p-3 text-stone-400">2</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Texas</td>
+                                <td class="p-3 text-center">4</td>
+                                <td class="p-3 text-center">60</td>
+                                <td class="p-3 text-stone-400">State Only</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Utah</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">8</td>
+                                <td class="p-3 text-stone-400">2</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Vermont</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Virginia</td>
+                                <td class="p-3 text-center">1</td>
+                                <td class="p-3 text-center">9</td>
+                                <td class="p-3 text-stone-400">2</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Washington</td>
+                                <td class="p-3 text-center">2</td>
+                                <td class="p-3 text-center">9</td>
+                                <td class="p-3 text-stone-400">2</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">West Virginia</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">3</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Wisconsin</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">5</td>
+                                <td class="p-3 text-stone-400">3</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Wyoming</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-center">0</td>
+                                <td class="p-3 text-stone-400">4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </div>
