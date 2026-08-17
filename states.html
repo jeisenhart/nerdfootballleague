@@ -13,8 +13,9 @@
             font-family: system-ui, -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
+        /* Desktop dropdown hover fix using the wrapper container */
         @media (min-width: 768px) {
-            .group:hover .dropdown-menu {
+            .dropdown-wrapper:hover .dropdown-menu {
                 display: block;
             }
         }
@@ -25,30 +26,45 @@
     <!-- Header / Navigation (Sticky at Top) -->
     <header class="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-md border-b border-stone-800 shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            
             <!-- Brand Logo (200px wide, left-aligned) -->
             <div class="flex items-center">
                 <a href="index.html">
                     <img src="images/nerd-logo.png" alt="OMNFL Logo" class="w-[200px] h-auto object-contain">
                 </a>
             </div>
-            <!-- Navigation Links -->
-            <nav class="flex items-center space-x-6 text-sm font-semibold uppercase tracking-wide text-stone-300">
-                <a href="index.html" class="hover:text-amber-400 transition">Home</a>
+
+            <!-- Desktop & Mobile Navigation Container -->
+            <div class="flex items-center">
                 
-                <!-- Recruiting Rules with Dropdown -->
-                <div class="relative group py-2" id="dropdown-parent">
-                    <a href="recruiting.html" id="dropdown-toggle" class="text-amber-400 transition flex items-center gap-1">
-                        Recruiting Rules
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </a>
-                    <!-- Sub-menu -->
-                    <div id="dropdown-menu" class="dropdown-menu hidden md:group-hover:block absolute left-0 mt-2 w-48 bg-stone-900 border border-stone-800 rounded-lg shadow-xl py-2 z-50">
-                        <a href="recruiting.html#regular-season" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Regular Season</a>
-                        <a href="recruiting.html#transfer-portal" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Transfer Portal</a>
-                        <a href="states.html" class="block px-4 py-2 text-xs text-amber-400 bg-amber-600/20 transition">Neighboring States</a>
+                <!-- Hamburger Button (Visible on Mobile only) -->
+                <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-amber-400 focus:outline-none p-2" aria-label="Toggle Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <!-- Navigation Links (Hidden on mobile by default, displayed via toggle) -->
+                <nav id="nav-container" class="hidden md:flex items-center space-x-6 text-sm font-semibold uppercase tracking-wide text-stone-300 absolute md:relative top-full left-0 w-full md:w-auto bg-stone-900 md:bg-transparent border-b md:border-none border-stone-800 shadow-lg md:shadow-none p-4 md:p-0 flex-col md:flex-row space-y-3 md:space-y-0">
+                    <a href="index.html" class="hover:text-amber-400 transition w-full md:w-auto py-1 md:py-0">Home</a>
+                    
+                    <!-- Recruiting Rules with Dropdown Wrapper -->
+                    <div class="dropdown-wrapper relative py-2 md:py-0 w-full md:w-auto" id="dropdown-parent">
+                        <button id="dropdown-toggle" class="text-amber-400 transition flex items-center justify-between md:justify-start gap-1 w-full md:w-auto text-left">
+                            <span>Recruiting Rules</span>
+                            <svg class="w-4 h-4 transition-transform duration-200 rotate-180" id="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <!-- Sub-menu: Added 'pt-2' on desktop to create an invisible hover bridge so mouse tracking doesn't break -->
+                        <div id="dropdown-menu" class="dropdown-menu hidden md:absolute left-0 pt-2 w-full md:w-48 z-50">
+                            <div class="bg-stone-950 md:bg-stone-900 border border-stone-800 rounded-lg shadow-xl py-2 pl-4 md:pl-0 space-y-1 md:space-y-0">
+                                <a href="recruiting.html#regular-season" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Regular Season</a>
+                                <a href="recruiting.html#transfer-portal" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Transfer Portal</a>
+                                <a href="states.html" class="block px-4 py-2 text-xs text-amber-400 bg-amber-600/20 transition">Neighboring States</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -391,22 +407,40 @@
         <p>&copy; 2026 Old Man's Nerd Football League. All rights reserved.</p>
     </footer>
 
-    <!-- Mobile Dropdown Toggle Script -->
+    <!-- Mobile Navigation & Dropdown Toggle Script -->
     <script>
-        const toggleBtn = document.getElementById('dropdown-toggle');
-        const menu = document.getElementById('dropdown-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navContainer = document.getElementById('nav-container');
+        const dropdownToggle = document.getElementById('dropdown-toggle');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const chevronIcon = document.getElementById('chevron-icon');
 
-        toggleBtn.addEventListener('click', function(e) {
+        // Toggle main mobile menu
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navContainer.classList.toggle('hidden');
+        });
+
+        // Toggle dropdown menu on mobile when clicking "Recruiting Rules"
+        dropdownToggle.addEventListener('click', function(e) {
             if (window.innerWidth < 768) {
                 e.preventDefault();
-                menu.classList.toggle('hidden');
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('hidden');
+                chevronIcon.classList.toggle('rotate-180');
+            } else {
+                // On desktop, clicking the main link should navigate normally
+                window.location.href = 'recruiting.html';
             }
         });
 
+        // Close menus when clicking outside
         window.addEventListener('click', function(e) {
-            if (!document.getElementById('dropdown-parent').contains(e.target)) {
-                if (window.innerWidth < 768) {
-                    menu.classList.add('hidden');
+            if (window.innerWidth < 768) {
+                if (!navContainer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    navContainer.classList.add('hidden');
+                    dropdownMenu.classList.add('hidden');
+                    chevronIcon.classList.remove('rotate-180');
                 }
             }
         });
