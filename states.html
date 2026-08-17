@@ -13,9 +13,10 @@
             font-family: system-ui, -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
-        /* Dropdown hover utility */
-        .group:hover .dropdown-menu {
-            display: block;
+        @media (min-width: 768px) {
+            .group:hover .dropdown-menu {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -35,13 +36,13 @@
                 <a href="index.html" class="hover:text-amber-400 transition">Home</a>
                 
                 <!-- Recruiting Rules with Dropdown -->
-                <div class="relative group py-2">
-                    <a href="recruiting.html" class="text-amber-400 transition flex items-center gap-1">
+                <div class="relative group py-2" id="dropdown-parent">
+                    <a href="recruiting.html" id="dropdown-toggle" class="text-amber-400 transition flex items-center gap-1">
                         Recruiting Rules
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
                     <!-- Sub-menu -->
-                    <div class="dropdown-menu hidden absolute left-0 mt-2 w-48 bg-stone-900 border border-stone-800 rounded-lg shadow-xl py-2 z-50">
+                    <div id="dropdown-menu" class="dropdown-menu hidden md:group-hover:block absolute left-0 mt-2 w-48 bg-stone-900 border border-stone-800 rounded-lg shadow-xl py-2 z-50">
                         <a href="recruiting.html#regular-season" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Regular Season</a>
                         <a href="recruiting.html#transfer-portal" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Transfer Portal</a>
                         <a href="states.html" class="block px-4 py-2 text-xs text-amber-400 bg-amber-600/20 transition">Neighboring States</a>
@@ -84,5 +85,25 @@
         <p>&copy; 2026 Old Man's Nerd Football League. All rights reserved.</p>
     </footer>
 
+    <!-- Mobile Dropdown Toggle Script -->
+    <script>
+        const toggleBtn = document.getElementById('dropdown-toggle');
+        const menu = document.getElementById('dropdown-menu');
+
+        toggleBtn.addEventListener('click', function(e) {
+            if (window.innerWidth < 768) {
+                e.preventDefault();
+                menu.classList.toggle('hidden');
+            }
+        });
+
+        window.addEventListener('click', function(e) {
+            if (!document.getElementById('dropdown-parent').contains(e.target)) {
+                if (window.innerWidth < 768) {
+                    menu.classList.add('hidden');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
