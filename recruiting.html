@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiting Rules - Old Man's Nerd Football League</title>
+    <!-- Tailwind CSS CDN for fast, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #f3f4f6;
+            font-family: system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Dropdown hover utility */
+        .group:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navigation (Sticky at Top) -->
+    <header class="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-md border-b border-stone-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Brand Logo (200px wide, left-aligned) -->
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="images/nerd-logo.png" alt="OMNFL Logo" class="w-[200px] h-auto object-contain">
+                </a>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="flex items-center space-x-6 text-sm font-semibold uppercase tracking-wide text-stone-300">
+                <a href="index.html" class="hover:text-amber-400 transition">Home</a>
+                
+                <!-- Recruiting Rules with Dropdown -->
+                <div class="relative group py-2">
+                    <a href="recruiting.html" class="text-amber-400 transition flex items-center gap-1">
+                        Recruiting Rules
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <!-- Sub-menu -->
+                    <div class="dropdown-menu hidden absolute left-0 mt-2 w-48 bg-stone-900 border border-stone-800 rounded-lg shadow-xl py-2 z-50">
+                        <a href="#regular-season" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Regular Season</a>
+                        <a href="#transfer-portal" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Transfer Portal</a>
+                        <a href="states.html" class="block px-4 py-2 text-xs text-stone-300 hover:bg-amber-600/20 hover:text-amber-400 transition">Neighboring States</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow py-12">
+        <div class="max-w-4xl mx-auto px-4 text-stone-300 space-y-12">
+            
+            <!-- Page Title Header -->
+            <div class="text-center space-y-3">
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Recruiting Guidelines</h1>
+                <p class="text-stone-400 text-sm md:text-base max-w-xl mx-auto">
+                    Official protocols, pipelines, and constraints for building your dynasty roster.
+                </p>
+            </div>
+            
+            <!-- Regular Season Sub-section -->
+            <div id="regular-season" class="bg-stone-900 border border-stone-800 rounded-xl p-6 md:p-8 space-y-4 scroll-mt-28 shadow-lg">
+                <h2 class="text-xl md:text-2xl font-bold text-amber-500 uppercase tracking-wide">Regular Season Recruiting</h2>
+                <p class="text-sm md:text-base leading-relaxed text-stone-300">
+                    Guidelines and hour allocation strategies during the active weekly season cycles:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-sm md:text-base text-stone-400">
+                    <li>Focus heavily on regional pipelines and optimal weekly hard sells.</li>
+                    <li>Manage coaching skill trees to maximize scouting efficiency and visit points.</li>
+                    <li>Keep all manual adjustments aligned with league commissioner parameters.</li>
+                </ul>
+            </div>
+
+            <!-- Transfer Portal Sub-section -->
+            <div id="transfer-portal" class="bg-stone-900 border border-stone-800 rounded-xl p-6 md:p-8 space-y-4 scroll-mt-28 shadow-lg">
+                <h2 class="text-xl md:text-2xl font-bold text-amber-500 uppercase tracking-wide">Transfer Portal Guidelines</h2>
+                <p class="text-sm md:text-base leading-relaxed text-stone-300">
+                    Rules governing offseason and mid-season transfer portal acquisitions:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-sm md:text-base text-stone-400">
+                    <li>Prioritize position-of-need profiling before committing weekly points.</li>
+                    <li>Adhere strictly to limits on maximum portal signees per cycle.</li>
+                    <li>Maintain clear communication regarding multi-coach target conflicts.</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 border-t border-stone-800 py-6 text-center text-stone-500 text-sm">
+        <p>&copy; 2026 Old Man's Nerd Football League. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
